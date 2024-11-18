@@ -4,19 +4,104 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css" rel="stylesheet">
+
     <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #434455;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#search-form input {
+  font-family: 'Montserrat', sans-serif;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#search-form button,
+#load-more-btn {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: #4E75FF;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+#search-form button:hover,
+#load-more-btn:hover {
+  background-color: #6C8CFF; 
+}
+
+.gallery {
+  width: 1128px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.gallery__item {
+  width: 360px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px; 
+  background-color: #fff;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  padding: 0 10px;
+}
+
+.is-hidden {
+  display: none;
+}
+    </style>
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    
 
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <form id="search-form">
+        <input type="text" name="searchQuery" placeholder="Search images..." />
+        <button type="submit">Search</button>
+      </form>
+      <div class="gallery"></div>
+      <button id="load-more-btn" class="is-hidden">Load more</button>
+     
     </main>
 
-    <load src="./partials/footer.html" />
+   
 
     <script type="module" src="./main.js"></script>
   </body>
