@@ -5,6 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+
 
     <title>Vanilla App Template</title>
     <style>
@@ -84,6 +86,20 @@ body {
   padding: 0 10px;
 }
 
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #4E75FF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  z-index: 9999;
+}
+
 .is-hidden {
   display: none;
 }
@@ -97,6 +113,8 @@ body {
         <input type="text" name="searchQuery" placeholder="Search images..." />
         <button type="submit">Search</button>
       </form>
+      <div id="loader" class="is-hidden"></div>
+
       <div class="gallery"></div>
       <button id="load-more-btn" class="is-hidden">Load more</button>
      
@@ -105,5 +123,6 @@ body {
    
 
     <script type="module" src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
   </body>
 </html>
